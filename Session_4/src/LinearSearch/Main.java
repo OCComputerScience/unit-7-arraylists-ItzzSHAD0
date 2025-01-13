@@ -14,5 +14,23 @@ public class Main
         array.add(7.0);
 
 
+        int idx = search(array, 2.9);
+
+        System.out.println(idx);
+    }
+
+    public static int search(ArrayList<Double> array, double target)
+    {
+        if (array.isEmpty()) return -1;
+
+        for (int i = 0; i < array.size(); i++)
+        {
+            if (array.get(i).equals(target))
+            {
+                return i;
+            }
+        }
+
+        return -1;
     }
 }

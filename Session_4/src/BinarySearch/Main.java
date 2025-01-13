@@ -13,7 +13,39 @@ public class Main
                 78, 81, 85, 88, 89
         ));
 
+        int idx = binarySearch(sortedNumbers, 61);
 
+        System.out.println(idx);
+    }
 
+    public static int binarySearch(ArrayList<Integer> nums, int target)
+    {
+        if (nums.isEmpty()) return -1;
+
+        int leftBound = 0;
+        int rightBound = nums.size() - 1;
+
+        for (int i = 0; i < nums.size() / 2; i++)
+        {
+            int middle = leftBound + (rightBound - leftBound) / 2;
+
+            // Checks mid
+            if (nums.get(middle) == target)
+            {
+                return middle;
+            }
+
+            if (nums.get(middle) > target)
+            {
+                rightBound = middle;
+            }
+
+            if (nums.get(middle) < target)
+            {
+                leftBound = middle;
+            }
+        }
+
+        return -1;
     }
 }
