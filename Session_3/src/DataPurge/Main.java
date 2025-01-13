@@ -1,5 +1,6 @@
 package DataPurge;
 
+import javax.xml.crypto.Data;
 import java.util.ArrayList;
 
 public class Main
@@ -8,6 +9,19 @@ public class Main
     {
         ArrayList<String> members = new ArrayList<String>();
         addMembers(members);
+
+        DataPurge.removeDuplicates(members);
+        DataPurge.removeName(members, "Josie");
+        DataPurge.removeName(members, "Trent");
+        DataPurge.removeName(members, "finley");
+        boolean isCorrectlyFormatted = DataPurge.correctlyFormatted(members);
+
+        System.out.println("Is Correctly Formatted: " + isCorrectlyFormatted);
+
+        for (String value : members)
+        {
+            System.out.println(value);
+        }
 
 
     }

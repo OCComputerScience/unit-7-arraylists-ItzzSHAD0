@@ -6,8 +6,6 @@ public class Main
     {
         Billboard top10 = new Billboard();
 
-        // Uncomment this to test once your classes are built
-        /*
         top10.add(new Musician("Beyonce", 316, 100000000));
         top10.add(new Musician("The Beatles", 365, 600000000));
         top10.add(new Musician("Drake", 425, 150000000));
@@ -27,7 +25,6 @@ public class Main
 
         //This musician should not replace an artist, but is a Platinum artist
         top10.add(new Musician("Alex Eacker", 100, 23400000));
-        */
 
         top10.printTop10();
     }

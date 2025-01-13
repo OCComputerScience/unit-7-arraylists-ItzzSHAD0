@@ -22,6 +22,7 @@ public class Main
         }};
 
         // Test if list1 is equal to list 2
+        System.out.println(list1.equals(list2));
 
         ArrayList<Integer> list3 = new ArrayList<>() {{
             add(1);
@@ -32,7 +33,19 @@ public class Main
         }};
 
         // Test if list 2 is equal to list 3
+        System.out.println(list2.equals(list3));
+    }
 
+    public static boolean equals(ArrayList<Integer> arr, ArrayList<Integer> arr2)
+    {
+        for (int i = 0; i < arr.size(); i++)
+        {
+            if (!arr.equals(arr2))
+            {
+                return false;
+            }
+        }
+        return true;
     }
 
 }
