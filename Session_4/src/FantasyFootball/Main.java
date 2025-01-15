@@ -47,14 +47,21 @@ public class Main
             System.out.println("Enter name of player to add: ");
             String inputPlayerName = input.nextLine();
 
-            if (availablePlayers.contains(inputPlayerName))
+            for (int i = 0; i < availablePlayers.size(); i++)
             {
-                roster.add(inputPlayerName);
-                System.out.println("Successfully added player...");
-            }
-            else
-            {
-                System.out.println(inputPlayerName + " is not an available player.");
+                if (availablePlayers.get(i).equalsIgnoreCase(inputPlayerName))
+                {
+                    roster.add(inputPlayerName);
+                    availablePlayers.remove(i);
+                    System.out.println("Successfully added player...");
+                    break;
+                }
+
+                if (i == availablePlayers.size() - 1)
+                {
+                    System.out.println(inputPlayerName + " is not an available player.");
+                    break;
+                }
             }
 
             System.out.println();
