@@ -13,7 +13,7 @@ public class Main
                 78, 81, 85, 88, 89
         ));
 
-        int idx = binarySearch(sortedNumbers, 61);
+        int idx = binarySearch(sortedNumbers, 89);
 
         System.out.println(idx);
     }
@@ -23,11 +23,13 @@ public class Main
         if (nums.isEmpty()) return -1;
 
         int leftBound = 0;
-        int rightBound = nums.size() - 1;
+        int rightBound = nums.size();
 
-        for (int i = 0; i < nums.size() / 2; i++)
+        double maxIterate = Math.ceil(Math.log10(nums.size()) / Math.log10(2));
+
+        for (int i = 0; i < maxIterate; i++)
         {
-            int middle = leftBound + (rightBound - leftBound) / 2;
+            int middle = (rightBound + leftBound) / 2;
 
             // Checks mid
             if (nums.get(middle) == target)
@@ -35,12 +37,12 @@ public class Main
                 return middle;
             }
 
+            // Checks target binary side
             if (nums.get(middle) > target)
             {
                 rightBound = middle;
             }
-
-            if (nums.get(middle) < target)
+            else
             {
                 leftBound = middle;
             }
